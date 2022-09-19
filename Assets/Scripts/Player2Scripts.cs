@@ -6,7 +6,7 @@ public class Player2Scripts : MonoBehaviour
 {
     private float speed = 4;
     private float addfocespeed = 0.7f;
-    private float JumpSpeed = 0.1f;
+    private float JumpSpeed = 0.09f;
     private Rigidbody rb; 
    // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class Player2Scripts : MonoBehaviour
             float dx = Input.GetAxis("Horizontal");
             float dz = Input.GetAxis("Vertical");
             var movement = new Vector3(dx, 0, dz);
-            rb.AddForce(movement * speed);
+            rb.AddForce(movement * speed*Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.A))
         {
